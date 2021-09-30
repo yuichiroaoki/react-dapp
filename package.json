@@ -20,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postinstall": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +40,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "lint-staged" : {
+    "*.{tsx,json,md,sol,ts}": [
+      "prettier --config .prettierrc.json --write"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "prettier": "2.4.1"
   }
 }
